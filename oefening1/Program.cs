@@ -1,4 +1,6 @@
-﻿class Test1
+﻿using System.Security.Cryptography;
+
+class Test1
 {
     static void Main(string[] args)
     {
@@ -6,15 +8,20 @@
     }
     static void start()
     {
-        Console.WriteLine("Calculator active do you wish to use it? (y/n) ");
+        Console.WriteLine("type C for calculator and D for Dice thrower type anything else to quit the program ");
         string? input = Console.ReadLine();
-        if (input == "y")
+        if (input == "C")
         {
             Calculate();
         }
+        
+        else if (input == "D")
+        {
+            DiceThrower();
+        }
         else
         {
-            Console.WriteLine("Calculator destruction is startng");
+            Console.WriteLine("program shutdown");
         }
     }
     static void cont(){
@@ -71,5 +78,21 @@
         
     }
 
+    static void DiceThrower()
+    {
+        int totalDice = 0;
+        Console.WriteLine("How many dice do you  want to throw");
+        int amount = int.Parse(Console.ReadLine());
+        Random rnd = new Random();
+        for (int i =0 ; i<amount; i++)
+        {
+            int dice1 = rnd.Next(1,7);
+            Console.WriteLine("dice " + i +"has rolled "+ dice1);
+            totalDice += dice1;
+        }
+        Console.WriteLine("the total amount is: " + totalDice);
+        start();
+        
+    }
     } 
 
