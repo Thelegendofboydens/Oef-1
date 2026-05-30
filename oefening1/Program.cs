@@ -14,7 +14,7 @@
         }
         else
         {
-            Console.WriteLine("Calculator closed");
+            Console.WriteLine("Calculator destruction is startng");
         }
     }
     static void cont(){
