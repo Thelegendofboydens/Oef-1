@@ -8,8 +8,7 @@ class Test1
     }
     static void start()
     {
-        Console.BackgroundColor = ConsoleColor.Blue;
-        Console.ForegroundColor = ConsoleColor.White;
+
         Console.WriteLine("type C for calculator and D for Dice thrower ");
         Console.WriteLine("And if you want to play a number guesser press N");
         Console.WriteLine("type anything else to quit the program ");
