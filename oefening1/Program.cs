@@ -9,7 +9,8 @@ class Test1
     static void start()
     {
         Console.WriteLine("type C for calculator and D for Dice thrower type anything else to quit the program ");
-        string? input = Console.ReadLine();
+        Console.WriteLine("And if you want to play a number guesser press N");
+         string input = Console.ReadLine();
         if (input == "C")
         {
             Calculate();
@@ -18,6 +19,10 @@ class Test1
         else if (input == "D")
         {
             DiceThrower();
+        }
+        else if(input == "N")
+        {
+            guessingGame();
         }
         else
         {
@@ -94,5 +99,36 @@ class Test1
         start();
         
     }
+
+
+
+
+    static void guessingGame()
+    {
+        int randomnumber;
+        int guess;
+        guess = 0;
+        Random D = new Random();
+        randomnumber = D.Next(0,101);
+        Console.WriteLine("guess the number 0-100");
+        while (guess != randomnumber)
+        {
+            
+            if(guess> randomnumber)
+            {
+                Console.WriteLine("het nummer is kleiner dan je huidige gok");
+            }
+            else
+            {
+                Console.WriteLine("het nummer is groter dan je huidige gok");
+            }
+            
+            guess = int.Parse(Console.ReadLine());
+        }
+        Console.WriteLine("woohoo you got it");
+    }
     } 
+
+
+
 
